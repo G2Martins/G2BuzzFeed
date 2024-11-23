@@ -1,55 +1,405 @@
-{
-  "title":"Você seria um heroi ou vilão ?",
-  "questions":[
-    {
-      "id":1,
-      "question": "Qual super poder você escolheria ?",
-      "options":[
-        {"id": 1, "name":"Raios-Lasers", "alias":"A"},
-        {"id": 2, "name":"Voar", "alias":"B"},
-        {"id": 3, "name":"Explodir coisas", "alias":"A"},
-        {"id": 4, "name":"Curar feridas", "alias":"B"},
-        {"id": 5, "name":"Soltar fogo pelas mãos", "alias":"A"}
-      ]
-    },
-    {
-      "id":2,
-      "question": "Quem você salvaria primeiro ?",
-      "options":[
-        {"id": 1, "name":"Crianças", "alias":"A"},
-        {"id": 2, "name":"Idosos", "alias":"A"},
-        {"id": 3, "name":"Não saberia escolher", "alias":"B"}
-      ]
-    },
-    {
-      "id":3,
-      "question": "Qual a sua maior preocupação ao enfretar outro super ser ?",
-      "options":[
-        {"id": 1, "name":"Não destruir prédios", "alias":"B"},
-        {"id": 2, "name":"Socar a cara do inimigo", "alias":"A"},
-        {"id": 3, "name":"Não sujar meu traje", "alias":"A"},
-        {"id": 4, "name":"Não deixar ninguém se ferir", "alias":"B"}
-      ]
-    },
-    {
-      "id":4,
-      "question": "Qual o seu maior foco ?",
-      "options":[
-        {"id": 1, "name":"Ficar rico com poderes", "alias":"A"},
-        {"id": 2, "name":"Salvar a cidade", "alias":"B"}
-      ]
-    },
-    {
-      "id":5,
-      "question": "Qual o seu apelido de super ser ?",
-      "options":[
-        {"id": 1, "name":"O Terrivel", "alias":"A"},
-        {"id": 2, "name":"Amigo da vizinhança", "alias":"B"}
-      ]
-    }
-  ],
-  "results":{
-    "A": "Você muito provavelmente seria um super vilão!",
-    "B": "Você muito provavelmente seria um super Herói!"
-  }
-}
+[
+	{
+	  "id": 1,
+	  "title": "Você seria um herói ou vilão? 🦸‍♂️🦹‍♂️",
+	  "description": "Descubra se você tem o coração de um herói ou o espírito de um vilão!",
+	  "image": "assets/images/quizzCovers/SuperHerois.jpg",
+	  "questions": [
+		{
+		  "id": 1,
+		  "question": "Qual super poder você escolheria?",
+		  "options": [
+			{ "id": 1, "name": "Raios-Lasers", "alias": "A" },
+			{ "id": 2, "name": "Voar", "alias": "B" },
+			{ "id": 3, "name": "Explodir coisas", "alias": "A" },
+			{ "id": 4, "name": "Curar feridas", "alias": "B" },
+			{ "id": 5, "name": "Soltar fogo pelas mãos", "alias": "A" }
+		  ]
+		},
+		{
+		  "id": 2,
+		  "question": "Quem você salvaria primeiro?",
+		  "options": [
+			{ "id": 1, "name": "Crianças", "alias": "A" },
+			{ "id": 2, "name": "Idosos", "alias": "A" },
+			{ "id": 3, "name": "Não saberia escolher", "alias": "B" },
+			{ "id": 4, "name": "Pessoas feridas", "alias": "B" }
+		  ]
+		},
+		{
+		  "id": 3,
+		  "question": "Qual a sua maior preocupação ao enfrentar outro super ser?",
+		  "options": [
+			{ "id": 1, "name": "Não destruir prédios", "alias": "B" },
+			{ "id": 2, "name": "Socar a cara do inimigo", "alias": "A" },
+			{ "id": 3, "name": "Não sujar meu traje", "alias": "A" },
+			{ "id": 4, "name": "Não deixar ninguém se ferir", "alias": "B" }
+		  ]
+		},
+		{
+		  "id": 4,
+		  "question": "Qual o seu maior foco?",
+		  "options": [
+			{ "id": 1, "name": "Ficar rico com poderes", "alias": "A" },
+			{ "id": 2, "name": "Salvar a cidade", "alias": "B" },
+			{ "id": 3, "name": "Ser famoso", "alias": "A" },
+			{ "id": 4, "name": "Proteger as pessoas", "alias": "B" }
+		  ]
+		},
+		{
+		  "id": 5,
+		  "question": "Qual o seu apelido de super ser?",
+		  "options": [
+			{ "id": 1, "name": "O Terrível", "alias": "A" },
+			{ "id": 2, "name": "Amigo da vizinhança", "alias": "B" },
+			{ "id": 3, "name": "O Guardião", "alias": "A" },
+			{ "id": 4, "name": "O Salvador", "alias": "B" }
+		  ]
+		}
+	  ],
+	  "results": {
+		"A": "Você muito provavelmente seria um super vilão!",
+		"B": "Você muito provavelmente seria um super Herói!"
+	  }
+	},
+	{
+	  "id": 2,
+	  "title": "Qual personagem de filme de terror você seria? 🎃👻",
+	  "description": "Descubra qual ícone assustador combina com a sua personalidade!",
+	  "image": "assets/images/quizzCovers/FilmeTerror.jpg",
+	  "questions": [
+		{
+		  "id": 1,
+		  "question": "Qual é o seu maior medo?",
+		  "options": [
+			{ "id": 1, "name": "Ficar sozinho para sempre", "alias": "C" },
+			{ "id": 2, "name": "Ser traído por amigos", "alias": "A" },
+			{ "id": 3, "name": "Escuridão total", "alias": "B" },
+			{ "id": 4, "name": "Encontros inesperados", "alias": "D" }
+		  ]
+		},
+		{
+		  "id": 2,
+		  "question": "Como você prefere resolver conflitos?",
+		  "options": [
+			{ "id": 1, "name": "Fugindo", "alias": "B" },
+			{ "id": 2, "name": "Enfrentando diretamente", "alias": "A" },
+			{ "id": 3, "name": "Manipulando", "alias": "C" },
+			{ "id": 4, "name": "Com planos elaborados", "alias": "D" }
+		  ]
+		},
+		{
+		  "id": 3,
+		  "question": "Qual ambiente te assusta mais?",
+		  "options": [
+			{ "id": 1, "name": "Floresta sombria", "alias": "D" },
+			{ "id": 2, "name": "Casa abandonada", "alias": "B" },
+			{ "id": 3, "name": "Hospital sombrio", "alias": "C" },
+			{ "id": 4, "name": "Ruas desertas", "alias": "A" }
+		  ]
+		},
+		{
+		  "id": 4,
+		  "question": "Escolha uma arma:",
+		  "options": [
+			{ "id": 1, "name": "Facão", "alias": "A" },
+			{ "id": 2, "name": "Corrente enferrujada", "alias": "C" },
+			{ "id": 3, "name": "Máscara assustadora", "alias": "B" },
+			{ "id": 4, "name": "Armadilhas engenhosas", "alias": "D" }
+		  ]
+		},
+		{
+		  "id": 5,
+		  "question": "Se você fosse um vilão, qual seria seu objetivo?",
+		  "options": [
+			{ "id": 1, "name": "Vingança", "alias": "A" },
+			{ "id": 2, "name": "Caos absoluto", "alias": "C" },
+			{ "id": 3, "name": "Inspirar medo", "alias": "B" },
+			{ "id": 4, "name": "Controlar as pessoas", "alias": "D" }
+		  ]
+		}
+	  ],
+	  "results": {
+		"A": "Você seria Jason Voorhees! Um caçador implacável que nunca para.",
+		"B": "Você seria Michael Myers! O símbolo do medo silencioso e mortal.",
+		"C": "Você seria Freddy Krueger! Um mestre dos pesadelos e da manipulação.",
+		"D": "Você seria Jigsaw! Inteligente, calculista e sempre um passo à frente."
+	  }
+	},
+	{
+		"id": 3,
+		"title": "Qual classe de RPG você seria? ⚔️🧙‍♂️",
+		"description": "Descubra qual classe épica de RPG combina mais com você!",
+		"image": "assets/images/quizzCovers/RPG.jpg",
+		"questions": [
+		  {
+			"id": 1,
+			"question": "Qual arma você escolheria para uma batalha?",
+			"options": [
+			  { "id": 1, "name": "Espada longa", "alias": "A" },
+			  { "id": 2, "name": "Arco e flecha", "alias": "B" },
+			  { "id": 3, "name": "Bastão mágico", "alias": "C" },
+			  { "id": 4, "name": "Machado pesado", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 2,
+			"question": "Qual é a sua principal virtude?",
+			"options": [
+			  { "id": 1, "name": "Coragem", "alias": "A" },
+			  { "id": 2, "name": "Inteligência", "alias": "B" },
+			  { "id": 3, "name": "Destreza", "alias": "C" },
+			  { "id": 4, "name": "Lealdade", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 3,
+			"question": "Qual é o seu ambiente favorito?",
+			"options": [
+			  { "id": 1, "name": "Floresta densa", "alias": "B" },
+			  { "id": 2, "name": "Montanhas geladas", "alias": "A" },
+			  { "id": 3, "name": "Ruínas mágicas", "alias": "C" },
+			  { "id": 4, "name": "Campos de batalha", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 4,
+			"question": "Escolha uma habilidade especial:",
+			"options": [
+			  { "id": 1, "name": "Golpe crítico", "alias": "A" },
+			  { "id": 2, "name": "Disparo perfeito", "alias": "B" },
+			  { "id": 3, "name": "Feitiço poderoso", "alias": "C" },
+			  { "id": 4, "name": "Defesa impenetrável", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 5,
+			"question": "Qual seria seu maior desafio em uma aventura?",
+			"options": [
+			  { "id": 1, "name": "Enfrentar um dragão", "alias": "A" },
+			  { "id": 2, "name": "Sobreviver a uma armadilha", "alias": "B" },
+			  { "id": 3, "name": "Decifrar enigmas antigos", "alias": "C" },
+			  { "id": 4, "name": "Salvar o grupo em perigo", "alias": "D" }
+			]
+		  }
+		],
+		"results": {
+		  "A": "Você seria um Guerreiro! Um combatente feroz e líder no campo de batalha.",
+		  "B": "Você seria um Arqueiro! Preciso, rápido e sempre no lugar certo.",
+		  "C": "Você seria um Mago! Um mestre do conhecimento arcano e da magia.",
+		  "D": "Você seria um Paladino! Um protetor imbatível e justo, guiado pela honra."
+		}
+	},
+	{
+		"id": 4,
+		"title": "Seu crush gosta de você? ❤️",
+		"description": "Descubra se há indícios de que seu crush sente o mesmo por você!",
+		"image": "assets/images/quizzCovers/Crush.jpg",
+		"questions": [
+		  {
+			"id": 1,
+			"question": "Vocês se encontram com muita frequência (mesmo que seja apenas por mensagem)?",
+			"options": [
+			  { "id": 1, "name": "Sim, o tempo todo!", "alias": "A" },
+			  { "id": 2, "name": "Sim, mas só às vezes.", "alias": "B" },
+			  { "id": 3, "name": "Raramente.", "alias": "C" },
+			  { "id": 4, "name": "Praticamente nunca.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 2,
+			"question": "Vocês saem muito juntos (com a família dele, com a sua, com os amigos de vocês, ou só vocês dois)?",
+			"options": [
+			  { "id": 1, "name": "Sim, frequentemente.", "alias": "A" },
+			  { "id": 2, "name": "Às vezes, mas em grupo.", "alias": "B" },
+			  { "id": 3, "name": "Raramente, só em ocasiões especiais.", "alias": "C" },
+			  { "id": 4, "name": "Nunca saímos juntos.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 3,
+			"question": "Ele já disse que gosta de outra pessoa para você?",
+			"options": [
+			  { "id": 1, "name": "Não, nunca falou sobre isso.", "alias": "A" },
+			  { "id": 2, "name": "Sim, mas disse que é algo do passado.", "alias": "B" },
+			  { "id": 3, "name": "Sim, e parece estar apaixonado por ela.", "alias": "C" },
+			  { "id": 4, "name": "Não, mas comenta muito sobre outras pessoas.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 4,
+			"question": "Ele já disse que gosta de você (romanticamente falando)?",
+			"options": [
+			  { "id": 1, "name": "Sim, claramente!", "alias": "A" },
+			  { "id": 2, "name": "Disse de forma indireta.", "alias": "B" },
+			  { "id": 3, "name": "Não, mas dá sinais.", "alias": "C" },
+			  { "id": 4, "name": "Não, nunca deu indícios.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 5,
+			"question": "Você gosta dele?",
+			"options": [
+			  { "id": 1, "name": "Sim, muito!", "alias": "A" },
+			  { "id": 2, "name": "Sim, mas ainda estou descobrindo.", "alias": "B" },
+			  { "id": 3, "name": "Talvez, não tenho certeza.", "alias": "C" },
+			  { "id": 4, "name": "Não, é só uma curiosidade.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 6,
+			"question": "De quantos porcento abaixo você acha que ele gosta de você?",
+			"options": [
+			  { "id": 1, "name": "Mais de 80% (certeza que sim).", "alias": "A" },
+			  { "id": 2, "name": "Entre 50% e 80%.", "alias": "B" },
+			  { "id": 3, "name": "Menos de 50%.", "alias": "C" },
+			  { "id": 4, "name": "Acredito que 0%.", "alias": "D" }
+			]
+		  }
+		],
+		"results": {
+		  "A": "Parece que ele realmente gosta de você! Invista nesse sentimento! ❤️",
+		  "B": "Há indícios de que ele gosta de você, mas talvez ainda esteja descobrindo seus próprios sentimentos.",
+		  "C": "Talvez ele goste de você apenas como amigo. Que tal tentar entender melhor essa relação?",
+		  "D": "Não parece que ele tem sentimentos românticos por você, mas isso não diminui sua importância!"
+		}
+	},
+	{
+		"id": 5,
+		"title": "Quiz sobre Programação Java ☕",
+		"description": "Teste seus conhecimentos sobre Java e suas peculiaridades!",
+		"image": "assets/images/quizzCovers/Java.jpg",
+		"questions": [
+		  {
+			"id": 1,
+			"question": "O que há de errado na seguinte declaração de variável Java?\n\nint 1stNumber = 23;",
+			"options": [
+			  { "id": 1, "name": "Nada está errado; é uma declaração válida.", "alias": "D" },
+			  { "id": 2, "name": "O identificador não pode começar com um número.", "alias": "A" },
+			  { "id": 3, "name": "Não se pode usar números em identificadores.", "alias": "B" },
+			  { "id": 4, "name": "Falta o ponto e vírgula no final.", "alias": "C" }
+			]
+		  },
+		  {
+			"id": 2,
+			"question": "Quais das seguintes declarações de variáveis estão incorretas?\n\na. float mySalary = 3500.77;\nb. int my1stSalary = 2300;\nc. double salaryOne = 3450.0f;\nd. double salary(1);",
+			"options": [
+			  { "id": 1, "name": "Somente a.", "alias": "C" },
+			  { "id": 2, "name": "Somente c e d.", "alias": "A" },
+			  { "id": 3, "name": "Todas estão corretas.", "alias": "D" },
+			  { "id": 4, "name": "Somente b e d.", "alias": "B" }
+			]
+		  },
+		  {
+			"id": 3,
+			"question": "Qual é o menor tipo de dado em Java que pode ser usado para armazenar a 'distância entre a Terra e Marte' em km?\n(A distância média é 234.460.000 km.)",
+			"options": [
+			  { "id": 1, "name": "int", "alias": "C" },
+			  { "id": 2, "name": "float", "alias": "B" },
+			  { "id": 3, "name": "long", "alias": "A" },
+			  { "id": 4, "name": "double", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 4,
+			"question": "Preveja a saída do seguinte programa Java:\n\nclass Test {\n  public static void main(String args[]) {\n    int x = -4;\n    System.out.println(x >> 1);\n    int y = 4;\n    System.out.println(y >> 1);\n  }\n}",
+			"options": [
+			  { "id": 1, "name": "-2 e 2", "alias": "A" },
+			  { "id": 2, "name": "-2 e -2", "alias": "B" },
+			  { "id": 3, "name": "-1 e 2", "alias": "C" },
+			  { "id": 4, "name": "Erro de compilação.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 5,
+			"question": "Para que serve o argumento 'String args[]' no método main?\n\npublic static void main(String args[]) {\n  //\n}",
+			"options": [
+			  { "id": 1, "name": "Passar argumentos durante o tempo de compilação.", "alias": "C" },
+			  { "id": 2, "name": "Passar argumentos durante a execução.", "alias": "A" },
+			  { "id": 3, "name": "Contar o número de palavras.", "alias": "B" },
+			  { "id": 4, "name": "Nada, é apenas obrigatório.", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 6,
+			"question": "Escolha a versão correta de um comentário de documentação em Java.",
+			"options": [
+			  { "id": 1, "name": "/*\ncomentários\n*/", "alias": "C" },
+			  { "id": 2, "name": "/**\ncomentários\n*/", "alias": "A" },
+			  { "id": 3, "name": "/*\ncomentários\n**/", "alias": "D" },
+			  { "id": 4, "name": "/**\ncomentários\n**/", "alias": "B" }
+			]
+		  }
+		],
+		"results": {
+		  "A": "Parabéns! Você conhece bem Java e está no caminho certo para se tornar um especialista.",
+		  "B": "Você tem um conhecimento básico de Java, mas ainda pode melhorar com mais prática!",
+		  "C": "Parece que você está começando com Java. Continue aprendendo e praticando!",
+		  "D": "Talvez seja hora de revisar os fundamentos de Java. Não desista!"
+		}
+	},
+	{
+		"id": 6,
+		"title": "Descubra seu estilo de viagem ideal! ✈️🌍",
+		"description": "Você prefere aventuras radicais ou relaxamento total? Descubra qual tipo de viagem combina mais com você!",
+		"image": "assets/images/quizzCovers/Viagem.jpg",
+		"questions": [
+		  {
+			"id": 1,
+			"question": "Qual é o seu principal objetivo ao viajar?",
+			"options": [
+			  { "id": 1, "name": "Conhecer culturas novas", "alias": "C" },
+			  { "id": 2, "name": "Relaxar em uma praia paradisíaca", "alias": "A" },
+			  { "id": 3, "name": "Fazer trilhas e explorar a natureza", "alias": "B" },
+			  { "id": 4, "name": "Experimentar comidas exóticas", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 2,
+			"question": "Qual é o seu tipo de hospedagem preferido?",
+			"options": [
+			  { "id": 1, "name": "Resorts de luxo", "alias": "A" },
+			  { "id": 2, "name": "Hostels ou pousadas locais", "alias": "C" },
+			  { "id": 3, "name": "Camping ao ar livre", "alias": "B" },
+			  { "id": 4, "name": "Hotéis no centro da cidade", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 3,
+			"question": "O que você mais gosta de fazer durante o dia?",
+			"options": [
+			  { "id": 1, "name": "Aproveitar o sol e o mar", "alias": "A" },
+			  { "id": 2, "name": "Visitar museus e pontos históricos", "alias": "C" },
+			  { "id": 3, "name": "Praticar esportes radicais", "alias": "B" },
+			  { "id": 4, "name": "Provar pratos típicos em restaurantes", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 4,
+			"question": "Qual item é indispensável na sua mala?",
+			"options": [
+			  { "id": 1, "name": "Roupas de banho e protetor solar", "alias": "A" },
+			  { "id": 2, "name": "Botas e equipamentos de aventura", "alias": "B" },
+			  { "id": 3, "name": "Guia de viagem e câmeras", "alias": "C" },
+			  { "id": 4, "name": "Caderneta para anotar experiências", "alias": "D" }
+			]
+		  },
+		  {
+			"id": 5,
+			"question": "Como você organiza suas viagens?",
+			"options": [
+			  { "id": 1, "name": "Faço um planejamento completo", "alias": "C" },
+			  { "id": 2, "name": "Deixo espaço para improvisos", "alias": "B" },
+			  { "id": 3, "name": "Prefiro pacotes fechados e organizados", "alias": "A" },
+			  { "id": 4, "name": "Pesquiso os melhores lugares para comer", "alias": "D" }
+			]
+		  }
+		],
+		"results": {
+		  "A": "Você é um amante do relaxamento! Seu estilo ideal são destinos de praia e resorts tranquilos.",
+		  "B": "Você é um aventureiro nato! Prefere viagens cheias de atividades ao ar livre e desafios.",
+		  "C": "Você é um explorador cultural! Seu foco está em aprender sobre história, artes e culturas locais.",
+		  "D": "Você é um gourmet viajante! Sempre em busca dos melhores sabores e experiências culinárias."
+		}
+	}					
+]

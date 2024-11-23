@@ -1,11 +1,13 @@
-*{
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    color: antiquewhite;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body{
-    background-color: #1F1147;
+body {
+    @apply bg-dark text-light;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 4rem; 
 }
