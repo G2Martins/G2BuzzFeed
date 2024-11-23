@@ -13,7 +13,8 @@
 			{ "id": 2, "name": "Voar", "alias": "B" },
 			{ "id": 3, "name": "Explodir coisas", "alias": "A" },
 			{ "id": 4, "name": "Curar feridas", "alias": "B" },
-			{ "id": 5, "name": "Soltar fogo pelas mãos", "alias": "A" }
+			{ "id": 5, "name": "Soltar fogo pelas mãos", "alias": "A" },
+			{ "id": 6, "name": "Prever o futuro", "alias": "B" }
 		  ]
 		},
 		{
