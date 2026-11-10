@@ -285,7 +285,7 @@ export class QuizPage {
           genre: `${TYPE_LABEL[q.type]} · ${c.label}`,
           about: c.label,
           isAccessibleForFree: true,
-          author: { '@type': 'Person', name: AUTHOR, url: PORTFOLIO_URL },
+          author: { '@type': 'Person', '@id': `${PORTFOLIO_URL}#person`, name: AUTHOR, url: PORTFOLIO_URL },
           isPartOf: { '@id': `${SITE_URL}/#website` },
         },
         breadcrumb([[c.label, `/categoria/${c.slug}/`], [q.title, path]]),

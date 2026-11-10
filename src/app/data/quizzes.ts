@@ -4,8 +4,9 @@
 export const SITE_URL = 'https://g2martins.github.io/G2BuzzFeed';
 export const SITE_NAME = 'G2 Buzz';
 export const AUTHOR = 'Gustavo Martins Gripaldi';
-export const PORTFOLIO_URL = 'https://g2portfolio.grovicdata.com';
-export const PROJECT_URL = `${PORTFOLIO_URL}/projetos/g2buzzfeed`;
+// Trailing slashes: the portfolio is on GitHub Pages, where /path answers with a 301 to /path/.
+export const PORTFOLIO_URL = 'https://g2portfolio.grovicdata.com/';
+export const PROJECT_URL = `${PORTFOLIO_URL}projetos/g2buzzfeed/`;
 export const REPO_URL = 'https://github.com/G2Martins/G2BuzzFeed';
 export const OG_IMAGE = '/og/g2buzz.png';
 
