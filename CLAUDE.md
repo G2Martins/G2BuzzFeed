@@ -71,3 +71,4 @@ npm run og           # python scripts/og.py: card social do site + 1 por quiz + 
 - **Lighthouse local:** o Kaspersky injeta script e derruba boas práticas; rodar via Chromium do Playwright (`--remote-debugging-port` + `lighthouse --port`). Servidor local precisa de gzip e de 404 fora da base (senão o robots.txt "existe" e falha).
 - **Print de página inteira** fica vazio abaixo da dobra (`content-visibility` + reveal): rolar e tirar print da viewport.
 - **Scratchpad compartilhado** entre agentes paralelos: usar subpasta própria para servidor/scripts de QA.
+- **Links internos sempre com barra no fim** (`/filmes/x/`): o GitHub Pages responde `/x` com 301. O `TrailingSlashSerializer` (`src/app/shared/trailing-slash.ts`, registrado em `app.config.ts`) cuida disso no router.
