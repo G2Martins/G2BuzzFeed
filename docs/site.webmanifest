@@ -1,0 +1,15 @@
+{
+  "name": "G2 Buzz",
+  "short_name": "G2 Buzz",
+  "description": "Quizzes autorais de personalidade, trivia e isto ou aquilo. Projeto de portfólio.",
+  "lang": "pt-BR",
+  "start_url": "/G2BuzzFeed/",
+  "scope": "/G2BuzzFeed/",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#f4f1e8",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

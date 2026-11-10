@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- Template for the social cards (1200x630). scripts/og.py calls render(data) once per quiz, plus the site card. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: Geist; src: url(../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2) format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: GeistMono; src: url(../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2) format("woff2"); font-weight: 100 900; }
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; color: #16131d; font-family: Geist, sans-serif; position: relative;
+    background: radial-gradient(700px 420px at 100% -10%, rgb(51 65 245 / .1), transparent 60%), radial-gradient(600px 420px at -10% 40%, rgb(255 140 190 / .12), transparent 60%), #f4f1e8; }
+  .dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgb(22 19 29 / .07) 1.2px, transparent 1.2px); background-size: 24px 24px; }
+  .wrap { position: absolute; inset: 0 560px 0 0; padding: 60px 0 56px 72px; display: flex; flex-direction: column; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 34px; font-weight: 600; letter-spacing: -0.04em; }
+  .brand span { font-weight: 300; color: #4d4757; }
+  .eyebrow { font-family: GeistMono, monospace; font-size: 17px; letter-spacing: .16em; text-transform: uppercase; color: #4d4757; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 9px; background: #3341f5; }
+  h1 { font-weight: 500; letter-spacing: -0.05em; line-height: 1.02; margin-top: 20px; font-size: 60px; text-wrap: balance; }
+  h1 b { font-weight: 500; background: linear-gradient(transparent 58%, #ffe680 58%, #ffe680 92%, transparent 92%); }
+  .foot { font-family: GeistMono, monospace; font-size: 16px; letter-spacing: .1em; text-transform: uppercase; color: #6b6474; display: flex; gap: 22px; white-space: nowrap; }
+  .tile { position: absolute; right: 64px; top: 75px; width: 480px; height: 480px; border-radius: 34px; overflow: hidden; border: 1px solid #dcd4c3;
+          box-shadow: 0 0 0 8px #ebe6da, 0 0 0 9px #dcd4c3; display: grid; place-items: center; isolation: isolate; }
+  .tile::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(circle, rgb(22 19 29 / .14) 1.4px, transparent 1.6px); background-size: 20px 20px; }
+  .tile::after { content: ""; position: absolute; z-index: -1; width: 360px; height: 360px; border-radius: 50%; right: -90px; top: -120px; background: rgb(255 255 255 / .4); }
+  .tile svg { width: 230px; height: 230px; filter: drop-shadow(5px 5px 0 rgb(22 19 29 / .15)); }
+  .tile .t { font-family: GeistMono, monospace; font-weight: 650; font-size: 130px; letter-spacing: -0.06em; }
+  .tile .t::after { content: ""; display: inline-block; width: 52px; height: 13px; margin-left: 6px; background: #3341f5; }
+  .stack { position: relative; width: 100%; height: 100%; }
+  .stack img { position: absolute; left: 50%; top: 50%; width: 200px; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px;
+               box-shadow: 0 0 0 5px #fff, 0 18px 40px rgb(22 19 29 / .3); transform: translate(-50%, -50%) rotate(-3deg); }
+  .stack.n3 img { width: 170px; }
+  .stack.n3 img:nth-child(1) { transform: translate(-118%, -46%) rotate(-9deg); }
+  .stack.n3 img:nth-child(2) { transform: translate(18%, -46%) rotate(8deg); }
+  .stack.n3 img:nth-child(3) { transform: translate(-50%, -54%) rotate(-1deg); z-index: 1; }
+  .grid { display: grid; grid-template-columns: repeat(3, 120px); gap: 18px; }
+  .grid div { width: 120px; height: 120px; border-radius: 22px; display: grid; place-items: center; border: 1px solid rgb(22 19 29 / .12); }
+  .grid svg { width: 60px; height: 60px; filter: none; }
+  .sticker { position: absolute; z-index: 2; font-family: GeistMono, monospace; font-size: 17px; letter-spacing: .08em; text-transform: uppercase;
+             padding: 10px 14px; border-radius: 9px; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="wrap">
+    <div class="brand">
+      <svg width="54" height="54" viewBox="0 0 32 32"><rect x="1" y="3" width="30" height="28" rx="8.5" fill="#16131d"/><rect x="1" y="1" width="30" height="28" rx="8.5" fill="#3341f5"/><path d="M19.6 10.4a6.6 6.6 0 1 0 1 7.1h-5.4" fill="none" stroke="#fffdf7" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.2 5.9c.3-1 1.1-1.5 2-1.5 1.1 0 1.9.8 1.9 1.8 0 1.5-2 2.4-3.9 4.3h4" fill="none" stroke="#ffe680" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>G2 <span>Buzz</span></div>
+    </div>
+    <div>
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+    </div>
+    <p class="foot"><span id="meta"></span><span>g2martins.github.io/G2BuzzFeed</span></p>
+  </div>
+  <div class="tile" id="tile"></div>
+<script>
+  const svg = (paths, w = 1.5) => `<svg viewBox="0 0 24 24" fill="none" stroke="#16131d" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${paths.map((d) => `<path d="${d}"/>`).join('')}</svg>`;
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  function render(d) {
+    document.getElementById('eyebrow').textContent = d.eyebrow;
+    const h = document.getElementById('title');
+    h.innerHTML = d.html ?? esc(d.title);
+    h.style.fontSize = d.title.length > 48 ? '50px' : d.title.length > 34 ? '56px' : '64px';
+    document.getElementById('meta').textContent = d.meta;
+    const tile = document.getElementById('tile');
+    tile.style.background = d.hue;
+    tile.innerHTML = d.grid
+      ? `<div class="grid">${d.grid.map((c) => `<div style="background:${c.hue}">${svg(c.g, 1.7)}</div>`).join('')}</div>`
+      : d.img.length ? `<div class="stack n${d.img.length}">${d.img.map((s) => `<img src="${s}">`).join('')}</div>`
+      : d.t ? `<span class="t">${esc(d.t)}</span>` : svg(d.g);
+    return Promise.all([...document.images].map((i) => i.decode().catch(() => 0)));
+  }
+</script>
+</body>
+</html>

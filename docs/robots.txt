@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /G2BuzzFeed/meus-resultados/
+
+Sitemap: https://g2martins.github.io/G2BuzzFeed/sitemap.xml

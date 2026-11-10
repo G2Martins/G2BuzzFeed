@@ -1,0 +1,159 @@
+<!-- Hero: promise on the left, the featured quiz as a sticker card on the right. -->
+<section class="wrap grid items-center gap-12 pb-10 pt-10 sm:pt-14 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pb-16 lg:pt-20" aria-labelledby="home-title">
+  <div>
+    <p class="eyebrow">Quizzes autorais em português</p>
+    <h1 id="home-title" class="h-display mt-5 text-[44px] sm:text-[64px] lg:text-[76px]">
+      <span class="mask"><span class="rise">Descubra quem</span></span><br>
+      <span class="mask"><span class="rise" style="animation-delay: 90ms">você é. Prove</span></span><br>
+      <span class="mask"><span class="rise" style="animation-delay: 180ms"><span class="hl">o que você sabe.</span></span></span>
+    </h1>
+    <p class="mt-6 max-w-lg text-[17px] leading-relaxed text-ink-2">
+      Personalidade, trivia com explicação em cada resposta e dilemas de isto ou aquilo. Sem cadastro: o resultado vira um card para baixar e compartilhar.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a [routerLink]="['/quiz', featured.slug]" class="btn btn-primary px-6 text-[15px]">Jogar o quiz em destaque <app-icon name="arrow-right" [size]="16" /></a>
+      <a routerLink="/quizzes" class="btn btn-line">Ver todos os quizzes</a>
+    </div>
+    <dl class="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-line pt-6">
+      <div><dt class="font-mono text-[10.5px] uppercase tracking-[0.12em] text-dim">Quizzes</dt><dd class="mt-1 text-[28px] font-medium tracking-[-0.04em]">{{ counts.quizzes }}</dd></div>
+      <div><dt class="font-mono text-[10.5px] uppercase tracking-[0.12em] text-dim">Perguntas</dt><dd class="mt-1 text-[28px] font-medium tracking-[-0.04em]">{{ counts.questions }}</dd></div>
+      <div><dt class="font-mono text-[10.5px] uppercase tracking-[0.12em] text-dim">Cadastro</dt><dd class="mt-1 text-[28px] font-medium tracking-[-0.04em]">0</dd></div>
+    </dl>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-[460px]">
+    <span class="bob label label-ink absolute -left-3 top-10 z-10 rotate-[-6deg] px-2.5 py-2 text-[11px] sm:-left-8" style="--r: -6deg" aria-hidden="true">Deu Python!</span>
+    <span class="bob label label-accent absolute -right-2 bottom-36 z-10 px-2.5 py-2 text-[11px] sm:-right-6" style="--r: 5deg; animation-delay: -2s" aria-hidden="true">7 de 8 acertos</span>
+    <article class="card ticks stretch lift rotate-[1.2deg]">
+      <app-art class="aspect-[16/10] rounded-t-[15px]" [art]="featured.art" [hue]="featuredHue" />
+      <div class="p-5 sm:p-6">
+        <p class="flex flex-wrap gap-1.5"><span class="label label-accent">Em destaque</span><span class="label">{{ type[featured.type] }}</span><span class="label">{{ featured.questions.length }} perguntas</span></p>
+        <h2 class="mt-3 text-[22px] font-medium leading-tight tracking-[-0.03em]">
+          <a class="stretch-link outline-none" [routerLink]="['/quiz', featured.slug]">{{ featured.title }}</a>
+        </h2>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">{{ featured.questions[0].q }}</p>
+        <ul class="mt-4 grid grid-cols-2 gap-2 text-[13px]" aria-hidden="true">
+          @for (o of featured.questions[0].options.slice(0, 4); track $index) {
+            <li class="flex items-center gap-2 rounded-xl border border-line-2 bg-surface px-2.5 py-2"><span class="key min-w-[22px] h-[22px] text-[10.5px]">{{ 'ABCD'[$index] }}</span><span class="clamp-2 leading-snug">{{ o.label }}</span></li>
+          }
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Trending -->
+<section class="wrap mt-10 sm:mt-16" aria-labelledby="trending-title">
+  <div class="flex items-end justify-between gap-4" reveal>
+    <div>
+      <p class="eyebrow">Em alta</p>
+      <h2 id="trending-title" class="h2 mt-3 text-[30px] sm:text-[40px]">Os quizzes do momento</h2>
+    </div>
+    <a routerLink="/quizzes" class="navlink hidden sm:inline">Ver todos</a>
+  </div>
+  <div class="mt-9 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+    @for (q of trending; track q.slug; let i = $index) { <app-quiz-card [quiz]="q" [reveal]="(i % 3) * 80" /> }
+  </div>
+</section>
+
+<!-- Quick poll strip -->
+<section class="mt-24 border-y border-line bg-ink text-paper" aria-labelledby="poll-title">
+  <div class="wrap grid items-center gap-8 py-12 lg:grid-cols-[1fr_1.4fr] lg:py-14">
+    <div>
+      <p class="eyebrow text-[#bdb6a8]">Isto ou aquilo rápido</p>
+      <h2 id="poll-title" class="h2 mt-3 text-[34px] sm:text-[44px]">{{ poll.q }}</h2>
+      <p class="mt-3 max-w-md text-[14.5px] leading-relaxed text-[#bdb6a8]">Um clique e você vê como a turma se divide. Seu voto fica só no seu navegador.</p>
+    </div>
+    <div>
+      <div class="grid gap-3 sm:grid-cols-2" role="group" aria-label="Escolha uma opção">
+        @for (o of poll.options; track $index) {
+          <button type="button" class="relative min-h-[96px] overflow-hidden rounded-2xl border border-white/15 bg-white/[0.04] p-5 text-left transition-colors hover:border-white/40"
+                  [class.border-mark]="pollVote() === $index" [attr.aria-pressed]="pollVote() === $index" (click)="vote($index)">
+            <span class="flex items-center justify-between gap-3">
+              <span class="text-[22px] font-medium tracking-[-0.03em]">{{ o.label }}</span>
+              @if (pollVote() !== undefined) { <span class="font-mono text-[20px] font-semibold">{{ share($index) }}%</span> }
+            </span>
+            @if (pollVote() !== undefined) {
+              <span class="mt-4 block h-1.5 overflow-hidden rounded-full bg-white/10">
+                <span class="grow block h-full rounded-full" [class]="pollVote() === $index ? 'bg-mark' : 'bg-white/40'" [style.transform]="'scaleX(' + share($index) / 100 + ')'" style="transform-origin: left"></span>
+              </span>
+              @if (pollVote() === $index) { <span class="mt-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-mark">Sua escolha</span> }
+            } @else {
+              <span class="mt-4 block font-mono text-[11px] uppercase tracking-[0.12em] text-[#bdb6a8]">Votar</span>
+            }
+          </button>
+        }
+      </div>
+      <p class="mt-4 flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-[#bdb6a8]">
+        <span aria-live="polite">{{ pollVote() !== undefined ? 'Distribuição simulada, não são votos reais.' : 'Distribuição simulada, exibida depois do voto.' }}</span>
+        <a [routerLink]="['/quiz', pollQuiz.slug]" class="inline-flex items-center gap-1.5 text-paper underline decoration-white/30 underline-offset-4 hover:decoration-mark">Jogar a edição completa <app-icon name="arrow-right" [size]="14" /></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section id="categorias" class="wrap cv mt-24 scroll-mt-28" aria-labelledby="cat-title">
+  <div reveal>
+    <p class="eyebrow">Categorias</p>
+    <h2 id="cat-title" class="h2 mt-3 text-[30px] sm:text-[40px]">Escolha seu assunto</h2>
+  </div>
+  <ul class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    @for (c of categories; track c.slug; let i = $index) {
+      <li [reveal]="(i % 3) * 70">
+        <a [routerLink]="['/categoria', c.slug]" class="panel lift group flex items-center gap-4 p-4 hover:border-line-2">
+          <app-art class="h-20 w-20 shrink-0 rounded-xl" [art]="{ g: c.g }" [hue]="c.hue" />
+          <span class="min-w-0">
+            <span class="flex items-baseline gap-2"><span class="text-[17px] font-medium tracking-[-0.02em]">{{ c.label }}</span><span class="font-mono text-[11px] text-dim">{{ c.count }} quizzes</span></span>
+            <span class="clamp-2 mt-1 block text-[13px] leading-snug text-ink-2">{{ c.blurb }}</span>
+          </span>
+          <app-icon name="arrow-right" [size]="16" class="ml-auto text-dim transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+      </li>
+    }
+  </ul>
+</section>
+
+<!-- Most played (static, simulated) + how it works -->
+<section class="wrap cv mt-24 grid gap-10 lg:grid-cols-[1.25fr_1fr]" aria-labelledby="top-title">
+  <div reveal>
+    <div class="flex items-end justify-between gap-3">
+      <div>
+        <p class="eyebrow">Mais jogados</p>
+        <h2 id="top-title" class="h2 mt-3 text-[30px] sm:text-[40px]">O ranking da semana</h2>
+      </div>
+      <span class="label shrink-0">Números simulados</span>
+    </div>
+    <ol class="card mt-8 divide-y divide-line">
+      @for (q of top; track q.slug; let i = $index) {
+        <li class="stretch flex items-center gap-4 p-4 transition-colors hover:bg-well/40 sm:px-5">
+          <span class="w-8 shrink-0 font-mono text-[26px] font-semibold tracking-[-0.06em]" [class.text-accent]="i === 0">{{ i + 1 }}</span>
+          <app-art class="h-14 w-14 shrink-0 rounded-xl" [art]="q.art" [hue]="hue(q)" />
+          <span class="min-w-0 flex-1">
+            <a [routerLink]="['/quiz', q.slug]" class="stretch-link block truncate text-[15px] font-medium outline-none">{{ q.title }}</a>
+            <span class="mt-0.5 block font-mono text-[11.5px] text-dim">{{ k(q.plays) }} jogadas · {{ type[q.type] }}</span>
+          </span>
+          <app-icon name="chevron-right" [size]="16" class="text-dim" />
+        </li>
+      }
+    </ol>
+  </div>
+  <div reveal="120">
+    <p class="eyebrow">Como funciona</p>
+    <h2 class="h2 mt-3 text-[30px] sm:text-[40px]">Três passos, zero cadastro</h2>
+    <ol class="mt-8 space-y-4">
+      <li class="panel flex gap-4 p-5">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#cbbcff] font-mono font-semibold">01</span>
+        <span class="text-ink-2"><strong class="font-medium text-ink">Escolha um quiz.</strong> Personalidade, trivia ou isto ou aquilo, em seis categorias.</span>
+      </li>
+      <li class="panel flex gap-4 p-5">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#a3e9c9] font-mono font-semibold">02</span>
+        <span class="text-ink-2"><strong class="font-medium text-ink">Responda no seu ritmo.</strong> Uma pergunta por vez, com mouse, toque ou teclado. Na trivia, cada resposta vem explicada.</span>
+      </li>
+      <li class="panel flex gap-4 p-5">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#ffe680] font-mono font-semibold">03</span>
+        <span class="text-ink-2"><strong class="font-medium text-ink">Baixe o card.</strong> O resultado vira uma imagem pronta para compartilhar e fica salvo em Meus resultados, só neste navegador.</span>
+      </li>
+    </ol>
+  </div>
+</section>
